@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="glass-navbar">
+  <span class="brand">AAUCAGYM <mat-icon>fitness_center</mat-icon></span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/dashboard">Panel</button>
+  <button mat-button routerLink="/trainers">Entrenadores</button>
+  <button mat-button routerLink="/subscriptions">Planes</button>
+  <button mat-button class="btn-premium ms-3">¡Únete!</button>
+</mat-toolbar>
+
+<div class="container-fluid mt-4">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,6 @@
+com.gymproject.gymbackend
+com.gymproject.gymbackend.config
+com.gymproject.gymbackend.controller
+com.gymproject.gymbackend.model
+com.gymproject.gymbackend.repository
+com.gymproject.gymbackend.service

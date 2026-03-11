@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.gymproject.gymbackend"},{"l":"com.gymproject.gymbackend.config"},{"l":"com.gymproject.gymbackend.controller"},{"l":"com.gymproject.gymbackend.model"},{"l":"com.gymproject.gymbackend.repository"},{"l":"com.gymproject.gymbackend.service"}];updateSearchResults();
