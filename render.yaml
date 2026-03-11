@@ -1,0 +1,25 @@
+services:
+  # Backend
+  - type: web
+    name: aaucagym-backend
+    env: docker
+    repo: https://github.com/Tranquilino1/AAUCAGYM
+    rootDir: gym-backend
+    plan: free
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://localhost:3306/gimnasio_db # User will need to update this to a real DB URL
+      - key: SPRING_DATASOURCE_USERNAME
+        value: root
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: root
+
+  # Frontend
+  - type: web
+    name: aaucagym-frontend
+    env: static
+    repo: https://github.com/Tranquilino1/AAUCAGYM
+    rootDir: gym-frontend
+    buildCommand: npm install && npm run build
+    publishDir: dist/gym-frontend
+    plan: free
