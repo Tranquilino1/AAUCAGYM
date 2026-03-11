@@ -15,11 +15,10 @@ services:
         value: root
 
   # Frontend
-  - type: web
+  - type: static_site
     name: aaucagym-frontend
-    runtime: static
+    env: static
     repo: https://github.com/Tranquilino1/AAUCAGYM
     rootDir: gym-frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: dist/gym-frontend
-    plan: free
+    publishDir: dist/gym-frontend
