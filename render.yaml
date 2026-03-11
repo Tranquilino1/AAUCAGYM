@@ -8,16 +8,18 @@ services:
     plan: free
     envVars:
       - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://localhost:3306/gimnasio_db # User will need to update this to a real DB URL
+        value: jdbc:mysql://YOUR_DB_HOST:3306/gimnasio_db
       - key: SPRING_DATASOURCE_USERNAME
         value: root
       - key: SPRING_DATASOURCE_PASSWORD
-        value: root
+        value: YOUR_PASSWORD
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
 
   # Frontend
   - type: web
     name: aaucagym-frontend
-    runtime: static
+    env: static
     repo: https://github.com/Tranquilino1/AAUCAGYM
     rootDir: gym-frontend
     buildCommand: npm install && npm run build
