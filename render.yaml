@@ -1,3 +1,9 @@
+# Definición de la Base de Datos MySQL
+databases:
+  - name: aaucagym-db
+    engine: mysql
+    plan: free
+
 services:
   # Backend
   - type: web
@@ -8,11 +14,17 @@ services:
     plan: free
     envVars:
       - key: SPRING_DATASOURCE_URL
-        value: jdbc:mysql://YOUR_DB_HOST:3306/gimnasio_db
+        fromDatabase:
+          name: aaucagym-db
+          property: connectionString
       - key: SPRING_DATASOURCE_USERNAME
-        value: root
+        fromDatabase:
+          name: aaucagym-db
+          property: user
       - key: SPRING_DATASOURCE_PASSWORD
-        value: YOUR_PASSWORD
+        fromDatabase:
+          name: aaucagym-db
+          property: password
       - key: SPRING_JPA_HIBERNATE_DDL_AUTO
         value: update
 
@@ -23,4 +35,4 @@ services:
     repo: https://github.com/Tranquilino1/AAUCAGYM
     rootDir: gym-frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: dist/gym-frontend
+    [cite_start]staticPublishPath: dist/gym-frontend [cite: 1]
